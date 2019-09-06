@@ -348,7 +348,7 @@ function voxradio_API($params, $api)
     }
 
     $domain = ($params['serverhostname']) ? $params['serverhostname'] : $params['serverip'];
-    $url_requisicao = "" . $domain . "/admin/api/" . $params['serveraccesshash'] . "/" . $requisicao . "";
+    $url_requisicao = "http://" . $domain . "/admin/api/" . $params['serveraccesshash'] . "/" . $requisicao . "";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url_requisicao);
