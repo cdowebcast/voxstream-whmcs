@@ -98,7 +98,7 @@ function voxradio_ConfigOptions()
 function voxradio_ClientArea($params) {
     global $_LANG;
     $domain = ($params['serverhostname']) ? $params['serverhostname'] : $params['serverip'];
-    $code = "<form id=loginForm action=\"$domain/login-autentica\" method=\"post\" target=\"_blank\"><input type=\"hidden\" name=\"porta\" value=" . $params['username'] . "><input type=\"hidden\" name=\"current-password\" value=" . $params['password'] . "><input class=\"btn btn-sm btn-default\" type=\"submit\" value=\"Login to VOX\"></form>";
+    $code = "<form id=loginForm action=\"http://$domain/login-autentica\" method=\"post\" target=\"_blank\"><input type=\"hidden\" name=\"porta\" value=" . $params['username'] . "><input type=\"hidden\" name=\"current-password\" value=" . $params['password'] . "><input class=\"btn btn-sm btn-default\" type=\"submit\" value=\"Login to VOX\"></form>";
     return $code;
 }
 
@@ -109,7 +109,7 @@ function voxradio_ClientArea($params) {
 function voxradio_AdminLink($params) {
     global $_LANG;
     $domain = ($params['serverhostname']) ? $params['serverhostname'] : $params['serverip'];
-    $code = "<form id=loginForm action=\"$domain/admin/login-autentica\" method=\"post\" target=\"_blank\"><input type=\"hidden\" name=\"email\" value=" . $params['serverusername'] . "><input type=\"hidden\" name=\"senha\" value=" . $params['serverpassword'] . "><input class=\"btn btn-sm btn-default\" type=submit value=\"Login to VOX\"></form>";
+    $code = "<form id=loginForm action=\"http://$domain/admin/login-autentica\" method=\"post\" target=\"_blank\"><input type=\"hidden\" name=\"email\" value=" . $params['serverusername'] . "><input type=\"hidden\" name=\"senha\" value=" . $params['serverpassword'] . "><input class=\"btn btn-sm btn-default\" type=submit value=\"Login to VOX\"></form>";
     return $code;
 }
 
